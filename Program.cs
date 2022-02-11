@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Threading;
+using System.Diagnostics;
 
 namespace Selectionsort {
     class Program {
-        static void Main(string[] args) {
+        static void Main(string[] args) {            
             int[] numberArray = new int[8000]; // Array with 1000 ints
             Random intRng = new Random(); // Random number generator
-        
-            bool flag = true;  
             int arrayLength = numberArray.Length; // The length of the array.
 
             Console.WriteLine("= = = = = = = = = = = = = = = = = = = =");
@@ -24,7 +24,11 @@ namespace Selectionsort {
             Console.WriteLine("Selection sort");
             Console.WriteLine("= = = = = = = = = = = = = = = = = = = =");
             Console.ReadKey();
-            
+
+            // === === === === === === === === === \\
+            // === === == Selectionsort == === === \\
+            // === === === === === === === === === \\
+            var timer = Stopwatch.StartNew();
             int temp, smallest;
             for (int i = 0; i < arrayLength - 1; i++) {
                 smallest = i;
@@ -43,6 +47,11 @@ namespace Selectionsort {
             for (int i = 0; i < arrayLength; i++) {
                 Console.Write(numberArray[i] + " ");
             }
+            timer.Stop();
+            Console.WriteLine(" \n ");
+            Console.WriteLine("= = = = = = = = = = = = = = = = = = = =");
+            Console.WriteLine("Time to sort was: " + timer.ElapsedMilliseconds + "ms");
+            Console.WriteLine("= = = = = = = = = = = = = = = = = = = =");
             Console.ReadKey();
         }
     }
