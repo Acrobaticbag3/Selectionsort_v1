@@ -28,6 +28,7 @@ namespace Selectionsort {
             // === === === === === === === === === \\
             // === === == Selectionsort == === === \\
             // === === === === === === === === === \\
+            
             var timer = Stopwatch.StartNew();
             int temp, smallest;
             for (int i = 0; i < arrayLength - 1; i++) {
